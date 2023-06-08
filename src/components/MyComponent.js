@@ -2,7 +2,7 @@
 // function component
 
 import React from "react";
-import UserInfo from "./Userinfo";
+import AddUserInfo from "./AddUserinfo";
 import DisplayInfo from "./DisplayInfo";
 
 class MyComponent extends React.Component {
@@ -14,12 +14,23 @@ class MyComponent extends React.Component {
             { id: 3, name: "Khang", age: "28" },
         ]
     }
+
+    handleAddNewUser = (userObj) => {
+        // const listUserClone = [...this.state.listUser];
+
+
+        this.setState({
+            listUser: [...this.state.listUser, userObj]
+        })
+    }
     //JSX
     render() {
         // DRY: Don't repeat yourself
         return (
             <div>
-                <UserInfo />
+                <AddUserInfo
+                    handleAddNewUser={this.handleAddNewUser}
+                />
                 <br></br>
                 <DisplayInfo
                     listUser={this.state.listUser}
