@@ -9,9 +9,9 @@ class MyComponent extends React.Component {
 
     state = {
         listUser: [
-            { id: 1, name: "Dan Cong Nghe", age: "32" },
-            { id: 2, name: "Quan", age: "26" },
-            { id: 3, name: "Khang", age: "24" },
+            { id: 1, name: "Dan Cong Nghe", age: "16" },
+            { id: 2, name: "Quan", age: "24" },
+            { id: 3, name: "Khang", age: "28" },
         ]
     }
     //JSX
