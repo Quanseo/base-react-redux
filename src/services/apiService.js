@@ -26,10 +26,26 @@ const putUpdateUser = (id, username, role, image) => {
 }
 
 const deleteUser = (userId) => {
-    return axios.delete('api/v1/participant', { data: { id: userId } });
+    return axios.delete(`api/v1/participant`, { data: { id: userId } });
 }
 const getUserWithPaginate = (page, limit) => {
     return axios.get(`api/v1/participant?page=${page}&limit=${limit} `);
 }
 
-export { postCreateNewUser, getAllUsers, putUpdateUser, deleteUser, getUserWithPaginate }
+const postLogin = (userEmail, userPassword) => {
+    return axios.post(`/api/v1/login`, { email: userEmail, password: userPassword, delay: 5000 });
+}
+
+const postRegister = (email, password, username) => {
+    return axios.post(`/api/v1/register`, { email, password, username });
+}
+
+const getQuizByUser = () => {
+    return axios.get('/api/v1/quiz-by-participant');
+}
+
+const getDataQuiz = (id) => {
+    return axios.get(`/api/v1/questions-by-quiz?quizId=${id}`);
+}
+
+export { postCreateNewUser, getAllUsers, putUpdateUser, deleteUser, getUserWithPaginate, postLogin, postRegister, getQuizByUser, getDataQuiz }
