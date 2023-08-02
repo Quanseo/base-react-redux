@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 const Header = () => {
 
     const isAuthenticated = useSelector(state => state.user.isAuthenticated);
+    // eslint-disable-next-line no-unused-vars
     const account = useSelector(state => state.user.account);
 
     const navigate = useNavigate();

@@ -10,7 +10,7 @@ import {
 } from 'react-pro-sidebar';
 import { DiReact } from "react-icons/di";
 import { MdDashboard } from "react-icons/md"
-import { FaTachometerAlt, FaGem, FaList, FaGithub, FaRegLaughWink, FaHeart } from 'react-icons/fa';
+import { FaGem, FaGithub } from 'react-icons/fa';
 import sidebarBg from '../../assets/bg2.jpg';
 import './Sidebar.scss'
 import { Link, useNavigate } from 'react-router-dom';
@@ -20,6 +20,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const SideBar = (props) => {
     const navigate = useNavigate();
+    // eslint-disable-next-line no-unused-vars
     const { image, collapsed, toggled, handleToggleSidebar } = props;
     return (
         <>
