@@ -12,23 +12,28 @@ const Register = (props) => {
     const [isShowPassword, setIsShowPassword] = useState(false);
     const navigate = useNavigate();
     const validateEmail = (email) => {
-        return String(email)
-            .toLowerCase()
-            .match(
-                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-            );
+        return String(email).toLowerCase().match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
     };
+
     const handleRegister = async () => {
-        //validate
+        // Validate email
         const isValidEmail = validateEmail(email);
         if (!isValidEmail) {
-            toast.error('Invalid email')
+            toast.error('Invalid email format');
             return;
         }
+
+        // Validate password
         if (!password) {
-            toast.error('Invalid password')
+            toast.error('Password is required');
             return;
         }
+
+        // Your registration logic here
+        // ...
+
 
         //submit apis
         let data = await postRegister(email, password, username);
