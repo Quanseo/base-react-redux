@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { doLogin } from '../../redux/action/userAction';
 import { ImSpinner10 } from "react-icons/im";
+import Language from '../Header/Language';
 
 
 const Login = (props) => {
@@ -51,11 +52,18 @@ const Login = (props) => {
             setIsLoading(false);
         }
     }
+
+    const handleKeyDown = (event) => {
+        if (event && event.key === 'Enter') {
+            handleLogin();
+        }
+    }
     return (
         <div className="login-container">
             <div className='header'>
                 <span> Bạn có tài khoản chưa ?</span>
-                <button onClick={() => navigate('register')}>Signup</button>
+                <button onClick={() => navigate('/register')}>Signup</button>
+                <Language />
             </div>
             <div className='title col-4 mx-auto'>
                 Dân Công Nghệ &amp; Quan
@@ -70,7 +78,9 @@ const Login = (props) => {
                 </div>
                 <div className='form-group'>
                     <label>Password</label>
-                    <input type={"password"} className='form-control' value={password} onChange={(event) => setPassword(event.target.value)} />
+                    <input type={"password"} className='form-control' value={password} onChange={(event) => setPassword(event.target.value)}
+                        onKeyDown={(event) => handleKeyDown(event)}
+                    />
                 </div>
                 <span className='forgot-password'>Forgot password ?</span>
                 <div><button className='btn-submit' onClick={() => handleLogin()} disabled={isLoading}>{isLoading === true && <ImSpinner10 className='loader-icon' />}  <span>Login</span></button></div>

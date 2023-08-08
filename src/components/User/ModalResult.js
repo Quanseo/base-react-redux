@@ -6,7 +6,6 @@ const ModalResult = (props) => {
 
     const handleClose = () => setShow(false);
 
-    console.log('check  :', dataModalResult)
 
     return (
         <>

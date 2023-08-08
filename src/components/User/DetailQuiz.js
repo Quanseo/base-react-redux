@@ -6,6 +6,7 @@ import _ from "lodash";
 import './DetailQuiz.scss';
 import Question from "./Question";
 import ModalResult from "./ModalResult";
+import RightContent from "./Content/RightContent";
 
 
 const DetailQuiz = (props) => {
@@ -31,6 +32,7 @@ const DetailQuiz = (props) => {
                         return item.answers;
                     });
                     let { description: questionDescription, image } = value[0];
+                    answers = _.orderBy(answers, ['id'], ['asc']);
                     return { questionId: key, answers, questionDescription, image };
                 })
                 .value();
@@ -138,7 +140,11 @@ const DetailQuiz = (props) => {
                 </div>
             </div>
             <div className="right-content">
-                Count Down
+                <RightContent
+                    dataQuiz={dataQuiz}
+                    handleFinishQuiz={handleFinishQuiz}
+                    setIndex={setIndex}
+                />
             </div>
             <ModalResult
                 show={isShowModalResult}
