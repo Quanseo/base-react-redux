@@ -269,8 +269,8 @@ const QuizQA = (props) => {
                                     </div>
                                 </div>
 
-                                {question.answers && question.answers.length > 0
-                                    && question.answers.map((answer, index) => {
+                                {question?.answers && question?.answers?.length > 0
+                                    && question?.answers?.map((answer, index) => {
                                         return (
                                             <div key={answer.id} className='answers-content'>
                                                 <input className="form-check-input iscorrect" type="checkbox" checked={answer.isCorrect} onChange={(event) => handleAnswerQuestion('CHECKBOX', answer.id, question.id, event.target.checked)} />
@@ -280,7 +280,7 @@ const QuizQA = (props) => {
                                                 </div>
                                                 <div className='btn-group'>
                                                     <span onClick={() => handleAddRemoveAnswer('ADD', question.id)}><FaPlusCircle className='icon-add' /></span>
-                                                    {question.answers.length > 1 &&
+                                                    {question?.answers?.length > 1 &&
                                                         <span onClick={() => handleAddRemoveAnswer('REMOVE', answer.id)}><FaMinusCircle className='icon-remove' /></span>}
                                                 </div>
                                             </div>
