@@ -14,7 +14,7 @@ const DashBoard = (props) => {
 
     const fetchDataOverview = async () => {
         let res = await getOverview();
-        if (res & res.EC === 0) {
+        if (res && res.EC === 0) {
             setDataOverView(res.DT);
             //chart data
             let Qz = 0, Qs = 0, As = 0;

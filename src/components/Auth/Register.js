@@ -62,11 +62,11 @@ const Register = (props) => {
             <div className='content-form col-4 mx-auto'>
                 <div className='form-group'>
                     <label>Email (*)</label>
-                    <input type={"email"} className='form-control' value={email} onChange={(event) => setEmail(event.target.email)} />
+                    <input type={"email"} className='form-control' value={email} onChange={(event) => setEmail(event.target.value)} />
                 </div>
-                <div className='form-group pass-group'>
+                <div className='pass-group'>
                     <label>Password (*)</label>
-                    <input type={isShowPassword ? "text" : "password"} className='form-control' value={password} onChange={(event) => setPassword(event.target.email)} />
+                    <input type={isShowPassword ? "text" : "password"} className='form-control' value={password} onChange={(event) => setPassword(event.target.value)} />
                     {isShowPassword ?
                         <span className="icons-eye" onClick={() => setIsShowPassword(false)}><VscEye /></span> : <span className="icons-eye" onClick={() => setIsShowPassword(true)}><VscEyeClosed /></span>}
                 </div>

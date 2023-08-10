@@ -7,11 +7,11 @@ import { FcPlus } from 'react-icons/fc'
 
 
 const ModalViewUser = (props) => {
-    const { setShow, show } = props;
+    const { dataView, setShow, show } = props;
     const handleClose = () => {
         setShow(false)
     };
-
+    console.log(">>> check :", dataView)
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [username, setUsername] = useState("");

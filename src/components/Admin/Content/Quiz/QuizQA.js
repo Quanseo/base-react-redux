@@ -281,7 +281,7 @@ const QuizQA = (props) => {
                                                 <div className='btn-group'>
                                                     <span onClick={() => handleAddRemoveAnswer('ADD', question.id)}><FaPlusCircle className='icon-add' /></span>
                                                     {question?.answers?.length > 1 &&
-                                                        <span onClick={() => handleAddRemoveAnswer('REMOVE', answer.id)}><FaMinusCircle className='icon-remove' /></span>}
+                                                        <span onClick={() => handleAddRemoveAnswer('REMOVE', question.id, answer.id)}><FaMinusCircle className='icon-remove' /></span>}
                                                 </div>
                                             </div>
                                         )
